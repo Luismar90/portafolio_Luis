@@ -1,3 +1,4 @@
+@import url("https://fonts.googleapis.com/css2?family=Righteous&family=Work+Sans:wght@100;300;400;600;800&display=swap");
 * {
   box-sizing: border-box;
   font-family: "Work Sans";
@@ -35,16 +36,18 @@ html {
   display: flex;
   list-style: none;
 }
+/*colocar la barra y darle posicion*/
 .contenedor-header header nav ul li a {
   text-align: none;
-  color: #fff;
+  color: #e63b29;
   margin: 0 15px;
   padding: 3px;
   transition: 0.5s;
   text-decoration: none;
+  /*poner sombra cada ves que pasa por encima de la letra*/
 }
 .contenedor-header header nav ul li a:hover {
-  color: #1cb698;
+  color: #fff;
 }
 .nav-responsive {
   background-color: #1cb698;
@@ -55,19 +58,21 @@ html {
   display: none;
 }
 /* SECCION I N I C I O */
+/*creo el fondo de la pantalla principal*/
 .inicio {
   background: linear-gradient(
       to top,
       rgba(30, 35, 38, 0.8),
       rgba(30, 35, 38, 1)
     ),
-    url(img/fondo.jpg);
+    url(img/programming-background-collage.jpg);
   background-size: cover;
   height: 100vh;
   color: #fff;
   display: flex;
   align-items: center;
 }
+/*contine la parte de la foto de perfil*/
 .inicio .contenido-banner {
   padding: 20px;
   background-color: #1e2326;
@@ -76,6 +81,7 @@ html {
   text-align: center;
   border-radius: 40px;
 }
+/*poniendo contorno a la img de perfil*/
 .inicio .contenido-banner img {
   margin-top: 40px;
   border: 10px solid #1cb698;
@@ -93,6 +99,7 @@ html {
   font-size: 15px;
   font-weight: normal;
 }
+/*forma y tamaños de los enlaces*/
 .inicio .contenido-banner .redes a {
   color: #fff;
   display: inline-block;
@@ -106,6 +113,7 @@ html {
   font-size: 20px;
   transition: 0.3s;
 }
+/*color de sombra una ves que pase por encima de los iconos*/
 .inicio .contenido-banner .redes a:hover {
   background-color: #1cb698;
 }
@@ -133,6 +141,7 @@ html {
   color: #1cb698;
   font-weight: bold;
 }
+
 .sobremi .fila {
   display: flex;
 }
