@@ -93,7 +93,7 @@ document.addEventListener("DOMContentLoaded", () => {
     if (!valid) return;
 
     // Enviar con EmailJS (cambia serviceID y templateID a los tuyos)
-    emailjs.sendForm("service_pros", "template_c4s62rq", form)
+    email.sendForm("service_pros", "template_c4s62rq", form)
       .then(() => {
         alert("Mensaje enviado correctamente.");
         form.reset();
@@ -102,6 +102,21 @@ document.addEventListener("DOMContentLoaded", () => {
         alert("Error al enviar el mensaje, intenta de nuevo.");
         console.error(error);
       });
+  });
+});
+
+document.addEventListener("DOMContentLoaded", function () {
+  VANTA.NET({
+    el: "#vanta-bg",
+    mouseControls: true,
+    touchControls: true,
+    gyroControls: false,
+    minHeight: 200.00,
+    minWidth: 200.00,
+    scale: 1.0,
+    scaleMobile: 1.0,
+    color: 0xffffff,         // Líneas
+    backgroundColor: 0x000000 // Fondo (puedes quitarlo si ya hay CSS)
   });
 });
 
