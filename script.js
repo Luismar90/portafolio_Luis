@@ -60,13 +60,13 @@ document.addEventListener("DOMContentLoaded", () => {
     e.preventDefault();
 
     // Limpiar mensajes de error
-    ["name", "email", "title", "message"].forEach(id => {
+    ["user_name", "user_email", "title", "message"].forEach(id => {
       document.getElementById("error-" + id).textContent = "";
     });
 
     // Validación simple
-    const name = form.name.value.trim();
-    const email = form.email.value.trim();
+    const name = form.user_name.value.trim();
+    const email = form.user_email.value.trim();
     const title = form.title.value.trim();
     const message = form.message.value.trim();
 
@@ -74,11 +74,11 @@ document.addEventListener("DOMContentLoaded", () => {
     let valid = true;
 
     if (name.length < 2) {
-      document.getElementById("error-name").textContent = "Nombre muy corto.";
+      document.getElementById("error-user_name").textContent = "Nombre muy corto.";
       valid = false;
     }
     if (!emailRegex.test(email)) {
-      document.getElementById("error-email").textContent = "Correo no válido.";
+      document.getElementById("error-user_email").textContent = "Correo no válido.";
       valid = false;
     }
     if (title.length < 3) {
@@ -93,7 +93,7 @@ document.addEventListener("DOMContentLoaded", () => {
     if (!valid) return;
 
     // Enviar con EmailJS (cambia serviceID y templateID a los tuyos)
-    email.sendForm("service_pros", "template_c4s62rq", form)
+      emailjs.sendForm("service_q64czoe", "template_xlzujf8", form)
       .then(() => {
         alert("Mensaje enviado correctamente.");
         form.reset();
@@ -103,6 +103,41 @@ document.addEventListener("DOMContentLoaded", () => {
         console.error(error);
       });
   });
+//**********************************************/
+
+/*form.addEventListener("submit", (e) => {
+  e.preventDefault();
+
+  // Validación simple
+  const name = form.user_name.value.trim();
+  const email = form.user_email.value.trim();
+  const title = form.title.value.trim();
+  const message = form.message.value.trim();
+
+  const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+  let valid = true;
+
+  if (name.length < 2) valid = false;
+  if (!emailRegex.test(email)) valid = false;
+  if (title.length < 3) valid = false;
+  if (message.length < 10) valid = false;
+
+  if (!valid) return;
+
+  // Enviar con EmailJS con manejo de error detallado
+  emailjs.sendForm("service_q64czoe", "template_xlzujf8", form)
+    .then((response) => {
+      console.log("✅ Éxito:", response.status, response.text);
+      alert("Mensaje enviado correctamente.");
+      form.reset();
+    })
+    .catch((error) => {
+      console.error("❌ Error EmailJS detallado:", error);
+      alert(`Error al enviar el mensaje. Código: ${error.status}, Mensaje: ${error.text}`);
+    });
+});*/
+
+
 });
 
 document.addEventListener("DOMContentLoaded", function () {
